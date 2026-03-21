@@ -1,4 +1,4 @@
-import Entity from "../../@shared/entity/entity.abstract";
+import {Entity} from "../../@shared/entity/entity.abstract";
 import Address from "../value-object/address";
 import NotificationError from "../../@shared/notification/notification.error";
 import CustomerValidatorFactory from "../factory/customer.validator.factory";

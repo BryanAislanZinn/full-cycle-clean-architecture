@@ -1,5 +1,5 @@
 import Notification from "../notification/notification";
-export default abstract class Entity {
+export abstract class Entity {
   protected _id: string;
   public notification: Notification;
 

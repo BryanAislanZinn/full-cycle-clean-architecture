@@ -1,7 +1,6 @@
-import { Product  } from "../entity/product";
+import { Product, ProductB  } from "../entity/";
 import { ProductInterface } from "../entity/product.interface";
 import { v4 as uuid } from "uuid";
-import ProductB from "../entity/product-b";
 
 export class ProductFactory {
   public static create(

@@ -1,9 +1,9 @@
 import { ValidatorInterface } from "../../@shared"
-import { Product } from "../entity";
+import { Product, ProductB } from "../entity";
 import * as yup from "yup";
 
-export class ProductYupValidator implements ValidatorInterface<Product> {
-  validate(entity: Product): void {
+export class ProductYupValidator implements ValidatorInterface<Product | ProductB> {
+  validate(entity: Product | ProductB): void {
     try {
       yup.object().shape({
         id: yup.string().required('Id is required'),
@@ -13,11 +13,11 @@ export class ProductYupValidator implements ValidatorInterface<Product> {
                   .required('Price is required')
                   .moreThan(0, "Price must be greater than zero"),
       }).validateSync({
-        id: entity.id,
-        name: entity.name,
-        price: entity.price,
+          id: entity.id,
+          name: entity.name,
+          price: entity.price,
       }, {
-        abortEarly: false,
+         abortEarly: false,
       });
     } catch (errors) {
       const yupErrors = errors as yup.ValidationError;

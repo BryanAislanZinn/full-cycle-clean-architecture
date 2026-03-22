@@ -15,8 +15,8 @@ export class Product extends Entity implements ProductInterface {
     this._price = price;
     this.validate();
 
-     if (this.notification.hasErrors()) {
-      throw new NotificationError(this.notification.getErrors());
+    if (this.notification.hasErrors()) {
+        throw new NotificationError(this.notification.getErrors());
     }
 
   }
